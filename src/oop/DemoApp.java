@@ -3,6 +3,21 @@ package oop;
 public class DemoApp {
     public static void main(String[] args) {
 
+        PersonManager pm = new PersonManager("firstname", "lastname", 'M', 29, "Austria", 2000, "blau", 67, 173);
+
+        for (int i = 0; i < 100; i++) {
+            pm.add(createTestPerson());
+        }
+        System.out.println(pm.getD());
+
+        GenderAnalyzer ga = new GenderAnalyzer();
+        pm.doAnalysis(ga);
+        CountryAnalyzer ca = new CountryAnalyzer();
+        pm.doAnalysis(ca);
+        MaxSalaryAnalyzer ma = new MaxSalaryAnalyzer();
+        pm.doAnalysis(ma);
+        BMIAnalyzer ba = new BMIAnalyzer();
+        pm.doAnalysis(ba);
 
 
     }
